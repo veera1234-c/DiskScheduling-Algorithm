@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="SSTF.css">
+    <title>SSTF Algorithm</title>
+    <script src="SSTF.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"> </script>
+</head>
+<body>
+    <center><h1><b>SSTF (Shortest-Seek-Time-First) Disk Scheduling Algorithm</b></h1></center>
+    <div class="intro">
+        <p>
+            In SSTF (Shortest Seek Time First), requests having shortest seek time are executed first.
+            So, the seek time of every request is calculated in advance in the queue and then they are scheduled according to their calculated seek time.
+            As a result, the request near the disk arm will get executed first.
+            SSTF is certainly an improvement over FCFS as it decreases the average response time and increases the throughput of system.
+        </p>
+        <div class="algointro">
+            <h2>Algorithm of SSTF:</h2>
+            <ol>
+                <li>Let Request array represents an array storing indexes of tracks that have been requested. ‘head’ is the position of disk head.</li>
+                <li>Find the positive distance of all tracks in the request array from head.</li>
+                <li>Find a track from requested array which has not been accessed/serviced yet and has minimum distance from head.</li>
+                <li>Increment the total seek count with this distance.</li>
+                <li>Currently serviced track position now becomes the new head position.</li>
+                <li>Go to step 2 until all tracks in request array have not been serviced.</li>
+            </ol>
+        </div>
+        <h3>Advantages of SSTF Disk scheduling Algorithm:</h3>
+        <ul>
+            <li>Average Response Time decreases</li>
+            <li>Throughput increases</li>
+        </ul>
+        <h3>Disadvantages of SSTF Disk scheduling Algorithm:</h3>
+        <ul>
+            <li>Overhead to calculate seek time in advance</li>
+            <li>Can cause Starvation for a request if it has higher seek time as compared to incoming requests</li>
+            <li>High variance of response time as SSTF favours only some requests</li>
+        </ul><br><br>
+    </div><br><br>
+    
+    <center><h1><b>SSTF (Shortest-Seek-Time-First) Disk Scheduling Algorithm Implementation</b></h1></center><br>
+
+    <div class="inputs">
+        <label for="values">Order Of Request:</label>
+        <input type="text" name="values" id="Queue_vals" placeholder="Separate them With Space">
+        <br><br>
+
+        <label for="value">Current Head Position:</label>
+        <input type="text" name="value" id="pos_head" placeholder="Head Position">
+        <br><br>
+
+        <button onclick="SSTFImplement();" id="implementbutton" type="button"> Implement </button>
+        <p id="inputvalue"></p>
+        
+        <div class="graph">
+            <center>
+            <canvas id="AlgoGraph" style="width:100%;max-width:700px"></canvas>
+            </center>
+        </div>
+    </div><br><br>
+    <center>
+        <p id="detailOutput"></p>
+        <p id="SequenceOutput"></p>
+        <p id="SeekOutput"></p>
+    </center>
+</body>
+</html>

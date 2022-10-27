@@ -1,0 +1,47 @@
+body{
+    margin: 2.5%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNG05NIdgmw2bBe-7vAHUsgaLeDYUJXC1BqA&usqp=CAU);   
+}
+.intro{
+    background-image: url(plainimage.jpg);
+    background-size: cover;
+    color:whitesmoke;
+    position: relative;
+	padding: 1em 2em;
+	outline: none;
+    border: 3px solid rosybrown;
+    border-radius: 100px;
+}
+.algointro{
+    position: relative;
+    border: 3px solid burlywood;
+    border-radius: 25px;
+}
+input{
+    height: 30px;
+    width: 20%;
+    border-radius: 30px;
+    font-size: 20px;
+}
+button {
+    background: #5E5DF0;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    border: 0;
+}
+button:hover{
+    transform:scale(1.2,1.2);
+}
+.graph{
+    background-color: white;
+}

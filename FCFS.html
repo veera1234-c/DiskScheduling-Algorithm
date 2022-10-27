@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="FCFS.css">
+    <title>FCFS Algorithm</title>
+    <script src="FCFS.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"> </script>
+</head>
+<body>
+    <div class="info">
+        <h1>First Come First Serve(FCFS) Algorithm</h1>
+        <p>FCFS (First-Come-First-Serve) is the simplest disk scheduling algorithm among all the scheduling algorithms.
+            In the FCFS disk scheduling algorithm, each input/output request is served in the order in which the requests arrive.
+            In this algorithm, starvation does not occur because FCFS address each request.It does not provide the fastest service.
+        </p>
+        <h2>Algorithm of FCFS:</h2>
+        <ul>
+            <li>Let Request array represents an array storing indexes of tracks that have been requested in ascending order of their time of arrival. ‘head’ is the position of disk head.</li>
+            <li>Let us one by one take the tracks in default order and calculate the absolute distance of the track from the head.</li>
+            <li>Increment the total seek count with this distance.</li>
+            <li>Currently serviced track position now becomes the new head position.</li>
+            <li>Go to step 2 until all tracks in request array have not been serviced.</li>
+        </ul>
+    </div><br><br>
+    <h1>First Come First Serve(FCFS) Algorithm Implementation</h1>
+    <div class="inputs">
+        <label for="values">Order Of Request:</label>
+        <input type="text" name="values" id="Queue_vals" placeholder="Separate them With Space">
+        <br><br>
+
+        <label for="value">Current Head Position:</label>
+        <input type="text" name="value" id="pos_head" placeholder="Head Position">
+        <br><br>
+
+        <button onclick="fcfsImplement();" id="implementbutton" type="button"> Implement </button>
+        <p id="inputvalue"></p>
+    </div>
+        <div class="graph">
+            <center>
+            <canvas id="AlgoGraph" style="width:100%;max-width:700px"></canvas>
+            </center>
+        </div><br><br>
+        <center>
+            <p id="detailOutput"></p>
+            <p id="SequenceOutput"></p>
+            <p id="SeekOutput"></p>
+        </center>
+    </div>
+</body>
+</html>
